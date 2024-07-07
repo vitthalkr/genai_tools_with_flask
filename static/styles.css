@@ -1,0 +1,362 @@
+/* static/style.css */
+
+
+
+header {
+    background-color: yellow;
+    color: white;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+body {
+    background-image: url('/static/images/backai.webp');
+    background-size: cover; /* Ensures the background covers the entire page */
+    background-repeat: no-repeat; /* Prevents the image from repeating */
+    background-attachment: fixed; /* Makes the background image fixed during scroll */
+    background-position: center; /* Centers the background image */
+    font-family: Arial, sans-serif; /* Example of setting a default font */
+    margin: 0;
+    padding: 0;
+    color: #333;
+}
+
+.download {
+    background-color: yellow;
+    color: black;
+    width: 150px;
+}
+
+.download:hover{
+    background-color:rgb(255, 230, 0) ;
+}
+
+header .dashboard h2 {
+    margin: 0;
+}
+
+.logo {
+    text-align: left;
+}
+
+.logotext {
+    position: absolute;
+    top: 8px;
+    right: 10px;
+    font-size: 25px;
+    color: black;
+    font-family: 'Times New Roman', Times, serif;
+    padding: 15px;
+    
+}
+
+header .dashboard a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+header .dashboard a:hover {
+    text-decoration: underline;
+}
+
+main {
+    flex: 1;
+    padding: 20px;
+}
+
+h1 {
+    color: #343a40;
+}
+
+form {
+    background-color: #acacac;
+    max-width: 150px;
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="password"] {
+    width: calc(100% - 20px);
+    padding: 8px 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ced4da;
+    border-radius: 4px;
+}
+
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #007bff;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #0056b3;
+}
+
+.progress-container {
+    margin-top: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.progress-circle {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background: conic-gradient(#4d5bf9 0% 0%, #cadcff 0% 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.progress-circle::before {
+    content: '';
+    width: 90px;
+    height: 90px;
+    background-color: #fff;
+    border-radius: 50%;
+    position: absolute;
+}
+
+#progress-text {
+    position: absolute;
+    font-size: 18px;
+    color: #4d5bf9;
+}
+
+.file-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 10px;
+}
+
+ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+li {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 4px;
+}
+
+label {
+    background-color:yellow;
+    color: rgb(0, 0, 0);
+    padding: 0.5rem;
+    font-family: sans-serif;
+    border-radius: 0.3rem;
+    cursor: pointer;
+    margin-top: 1rem;
+}
+
+.login-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+/* Login form styling */
+.login-form {
+    background-color: rgba(255, 255, 255, 0.8);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+label:hover{
+    background-color: rgb(255, 230, 0);
+}
+
+.success {
+    background-color: #d4edda;
+    color: #155724;
+}
+
+.danger {
+    background-color: #f8d7da;
+    color: #721c24;
+}
+
+.info {
+    background-color: #d1ecf1;
+    color: #0c5460;
+}
+
+a {
+    color: #007bff;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Dropdown CSS */
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropbtn {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    font-size: 16px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    border-radius: 4px;
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+
+.dropdown:hover .dropbtn {
+    background-color: #0056b3;
+}
+
+.submit {
+    width: 100px;
+    background-color: yellow;
+    color: black;
+}
+
+.submit:hover{
+    background-color:rgb(255, 230, 0) ;
+}
+
+.file-input-section {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    flex: 1;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between; /* Space elements apart */
+    align-items: flex-start;
+    width: 100%;
+    max-width: 1200px; /* Adjust the maximum width as needed */
+    padding: 0 20px;
+}
+
+.file-list-container {
+    background-color: #f0f0f0;  /* Light background color */
+    border: 1px solid #ccc;     /* Border color */
+    padding: 20px;              /* Padding inside the container */
+    margin: 20px 0;             /* Margin around the container */
+    border-radius: 8px;         /* Rounded corners */
+    max-width: 300px;           /* Maximum width */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    overflow-y: auto;           /* Enable vertical scrolling if needed */
+    max-height: 400px;          /* Max height for scrolling */
+    flex: 0 0 300px
+}
+/* Example CSS styles for the file item box */
+.file-item {
+    background-color: #f9f9f9;  /* Light background color */
+    border: 1px solid #ddd;     /* Light border */
+    padding: 15px;              /* Padding inside the box */
+    margin: 10px 0;             /* Space between boxes */
+    border-radius: 8px;         /* Rounded corners */
+    display: flex;              /* Use flexbox for layout */
+    justify-content: space-between; /* Space out content */
+    align-items: center;        /* Center items vertically */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    width: 250px;
+}
+
+/* Example CSS styles for the remove button */
+.remove-button {
+    background-color: #ff4d4d;  /* Red background */
+    color: white;               /* White text */
+    border: none;               /* Remove border */
+    padding: 5px 10px;          /* Smaller padding */
+    cursor: pointer;            /* Pointer cursor on hover */
+    border-radius: 3px;         /* Rounded corners */
+    font-size: 12px;            /* Smaller font size */
+    width: 60px
+}
+
+.remove-button:hover {
+    background-color: #ff3333;  /* Darker red on hover */
+}
+
+.mains {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 20px;
+}
+
+.download-button {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: yellow;
+    color: rgb(0, 0, 0);
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    border-radius: 4px;
+    margin: 5px 0;
+    transition: background-color 0.3s;
+}
+
+.download-button:hover {
+    background-color: rgb(255, 230, 0);
+}
+
+
+footer {
+    background: #333;
+    color: white;
+    text-align: center;
+    padding: 1em;
+}

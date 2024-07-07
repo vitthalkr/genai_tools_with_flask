@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body>
+    <header>
+        <div class="dashboard">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/ey.jpg') }}" alt="Company Logo">
+            </div>
+            <div class="logotext">
+                <p>ey.ai</p>
+            </div>
+            
+            <br>
+            <br>
+            {% if 'username' in session %}
+                <a style="color: black;" href="{{ url_for('know_more') }}">Know More</a>
+                <a style="color: black;" href="{{ url_for('contact') }}">Contact us</a>
+                <a style="color: black;" href="{{ url_for('logout') }}">Logout</a>
+            {% else %}
+                <a style="color: black;" href="{{ url_for('know_more') }}">Know More</a>
+                <a style="color: black;" href="{{ url_for('contact') }}">Contact us</a>
+                <a style="color: black;" href="{{ url_for('login') }}">Login</a>
+            {% endif %}
+        </div>
+    </header>
+    <h1 style="color: white; padding: 10px;">GEN AI</h1>
+    <p style="color: white; padding: 15px;">Generative AI relies on sophisticated machine learning models called <br>
+        deep learning models—algorithms that simulate the learning and <br>
+        decision-making processes of the human brain. These models work by <br>
+        identifying and encoding the patterns and relationships in huge <br>
+        amounts of data, and then using that information to <br>
+        understand users' natural language requests or questions and respond with <br>
+        relevant new content. <br>
+
+        AI has been a hot technology <br>
+        topic for the past decade, <br>
+        but generative AI, and specificall <br>
+        y the arrival of ChatGPT in 2022, <br>
+        has thrust AI into worldwide headlines <br>
+        and launched an unprecedented surge <br>
+        of AI innovation and adoption. Generative <br>
+        AI offers enormous productivity <br>
+        benefits for individuals and organizations, <br>
+        and while it also presents <br>
+        very real challenges and risks, businesses <br>
+        are forging ahead, exploring how the technology <br>
+        can improve their internal workflows and enrich <br>
+        their products and services. According to <br>
+        research by the management consulting firm McKinsey, <br>
+        one third of organizations are already <br>
+        using generative AI regularly in at least one business function.¹ Industry analyst Gartner <br>
+        projects more than 80% of organizations will have deployed generative AI applications or used <br>
+        generative AI application programming interfaces (APIs) by 2026.</p>
+
+</body>
+</html>

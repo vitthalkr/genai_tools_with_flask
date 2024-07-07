@@ -1,0 +1,72 @@
+<!-- templates/home.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body style="background-color: #d6d6d6;">
+    <header>
+        <div class="dashboard">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/ey.jpg') }}" alt="Company Logo">
+            </div>
+            <div class="logotext">
+                <p>ey.ai</p>
+            </div>
+            
+            <br>
+            <br>
+            {% if 'username' in session %}
+                <a style="color: black;" href="{{ url_for('home') }}">Home</a>
+                <a style="color: black;" href="{{ url_for('know_more') }}">Know More</a>
+                <a style="color: black;" href="{{ url_for('contact') }}">Contact us</a>
+                <a style="color: black;" href="{{ url_for('logout') }}">Logout</a>
+                {% if is_admin %}
+                        <a style="color: black;" href="{{ url_for('admin.index') }}">Admin Panel</a>
+                        <a style="color: black;" href="{{ url_for('create_user') }}">Create User</a>
+                {% endif %}
+                {% if session['username'] %}
+                    <a style="color: black;" href="{{ url_for('user_panel') }}">User Panel</a>
+                {% endif %}
+            {% else %}
+                <a style="color: black;" href="{{ url_for('know_more') }}">Know More</a>
+                <a style="color: black;" href="{{ url_for('contact') }}">Contact us</a>
+                <a style="color: black;" href="{{ url_for('login') }}">Login</a>
+            {% endif %}
+        </div>
+    </header>
+
+    <main>
+
+        <h1 style="color: white;">Transforming Ideas into Reality with Generative AI</h1>
+        {% if 'username' in session %}
+            <p style="color: white;">Hello, {{ session['username'] }}!</p>
+
+            <h3 style="color: #ffffff;">Choose from the following tools</h3>
+
+            <div class="model_images">
+                <p><a href="{{ url_for('option1') }}">
+                    <img src="{{ url_for('static', filename='images/email.png') }}" alt="Email Logo" width="300" height="180">
+                    </a></p>
+            </div>
+            <a style="color: rgb(255, 255, 255);" href="{{ url_for('option1') }}">1.Email Classifier</a>
+
+            <div class="model_images">
+                <p><a href="{{ url_for('option2') }}">
+                    <img src="{{ url_for('static', filename='images/emailsum.png') }}" alt="Email Sum Logo" width="300" height="180">
+                    </a></p>
+            </div>
+            <a style="color: rgb(255, 255, 255);" href="{{ url_for('option2') }}">2.Email Summarizer</a>
+
+            
+        {% else %}
+            <p style="color: white;">You are not logged in. <a href="{{ url_for('login') }}">Login here</a></p>
+            
+        {% endif %}
+    </main>
+    <script src="{{ url_for('static', filename='idleLogout.js') }}"></script>
+
+</body>
+</html>

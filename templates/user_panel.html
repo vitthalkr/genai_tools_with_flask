@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Panel</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<style>
+    table {
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table, th, td {
+        border: 1px solid black;
+    }
+
+    th, td {
+        padding: 10px;
+        text-align: left;
+    }
+</style>
+<body style="background-color: #d6d6d6;">
+    <header>
+        <div class="dashboard">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/ey.jpg') }}" alt="Company Logo">
+            </div>
+            <div class="logotext">
+                <p>ey.ai</p>
+            </div>
+            
+            <br>
+            <br>
+            {% if 'username' in session %}
+                <a style="color: black;" href="{{ url_for('home') }}">Home</a>
+                <a style="color: black;" href="{{ url_for('know_more') }}">Know More</a>
+                <a style="color: black;" href="{{ url_for('contact') }}">Contact us</a>
+                <a style="color: black;" href="{{ url_for('logout') }}">Logout</a>
+                {% if is_admin %}
+                        <a style="color: black;" href="{{ url_for('admin.index') }}">Admin Panel</a>
+                        <a style="color: black;" href="{{ url_for('create_user') }}">Create User</a>
+                {% endif %}
+                {% if session['username'] %}
+                    <a style="color: black;" href="{{ url_for('user_panel') }}">User Panel</a>
+                {% endif %}
+            {% else %}
+                <a style="color: black;" href="{{ url_for('know_more') }}">Know More</a>
+                <a style="color: black;" href="{{ url_for('contact') }}">Contact us</a>
+                <a style="color: black;" href="{{ url_for('login') }}">Login</a>
+            {% endif %}
+        </div>
+    </header>
+    <h1 style="color: white;">User Panel</h1>
+    
+    {% if files %}
+    <table style="color: white;">
+        <thead>
+            <tr>
+                <th>Filename</th>
+                <th>Number of Rows</th>
+                <th>Tokens</th>
+                <th>File Size (bytes)</th>
+                <th>Processed At</th>
+                <th>Tools Used</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for file in files %}
+            <tr>
+                <td>{{ file.filename }}</td>
+                <td>{{ file.num_rows }}</td>
+                <td>{{ file.tokens }}</td>
+                <td>{{ file.file_size }}</td>
+                <td>{{ file.processed_at }}</td>
+                <td>{{ file.tool_used }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+    {% else %}
+    <p>No logs found for your account.</p>
+    {% endif %}
+</body>
+</html>

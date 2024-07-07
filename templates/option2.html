@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='styles.css') }}">
+</head>
+<body style="background-color: rgb(187, 187, 187);">
+    <header>
+        <div class="dashboard">
+            <div class="logo">
+                <img src="{{ url_for('static', filename='images/ey.jpg') }}" alt="Company Logo">
+            </div>
+            <div class="logotext">
+                <p>AI at your fingertips</p>
+            </div>
+            <br><br>
+            <a style="color: black;" href="{{ url_for('home') }}">Home</a>
+            <a style="color: black;" href="{{ url_for('know_more') }}">Know More</a>
+            <a style="color: black;" href="{{ url_for('contact') }}">Contact us</a>
+            <a style="color: black;" href="{{ url_for('logout') }}">Logout</a>
+        </div>
+    </header>
+    <h3 style="color: white;">Use our most advanced Email Summarizer. Get freedom from boring long emails and summarize them. </h3>
+    <main class="mains">
+        <div class="form-container">
+            <div class="file-input-section">
+                <form id="uploadForm" enctype="multipart/form-data">
+                    Choose to Add file:
+                    <input type="file" id="fileInput" name="files" accept=".pdf" multiple hidden />
+                    <label for="fileInput" class="btn">Add File</label>
+                    <br><br>
+                    <button type="submit" class="submit">Submit</button>
+                </form>
+                <br><br> 
+                <div id="progress-container" class="progress-container" style="display:none;">
+                    <div class="progress-circle" id="progress-circle">
+                        <span id="progress-text">0%</span>
+                    </div>
+                </div>
+                <div id="downloadSection" style="display:none;">
+                    <!--<button id="downloadButton" style="display:none;" class="download">Download Files</button>-->
+                </div>
+                
+            </div>
+            <div id="fileList" class="file-list-container">Added Files</div>
+        </div>
+    </main>
+
+    <script src="{{ url_for('static', filename='script2.js') }}"></script>
+</body>
+
+</html>
